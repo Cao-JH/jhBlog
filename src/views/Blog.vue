@@ -1,7 +1,7 @@
 <template>
   <div class="proContain">
     <div class="wuhai"><img src="../assets/asset/wuhai.png" /></div>
-    <TopNav :activeId="4" />
+    <TopNav :activeId="3" />
     <Foot class="proFoot" />
   </div>
 </template>
