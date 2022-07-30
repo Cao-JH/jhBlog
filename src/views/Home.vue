@@ -53,7 +53,8 @@ body {
 .home {
   width: 100vw;
   height: 100vh;
-  border: 24px solid #18191b;
+  border: 16px solid #18191b;
+  position: relative;
 
   .nav {
     position: relative;
@@ -102,8 +103,8 @@ body {
   .foot {
     position: absolute;
     width: 52%;
-    bottom: 24px;
-    left: 24px;
+    bottom: 0;
+    left: 0;
 
     .footPic {
       margin-right: 30px;

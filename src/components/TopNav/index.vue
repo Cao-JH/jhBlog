@@ -42,8 +42,8 @@ export default {
 .homeNav {
   position: absolute;
   border-radius: 5px;
-  right: 120px;
-  top: 72px;
+  right: 102px;
+  top: 48px;
   background: #18191b;
   width: 300px;
   height: 90px;
