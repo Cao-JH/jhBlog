@@ -47,6 +47,7 @@ export default {
   background: #18191b;
   width: 300px;
   height: 90px;
+  z-index: 99;
 
   .homeNavBtn {
     margin: 0 30px;

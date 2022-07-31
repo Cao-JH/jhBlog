@@ -37,8 +37,7 @@ export default {
 
 <style lang="less">
 .abContain {
-  // width: 100vw;
-  // height: auto;
+  user-select: none;
   border: 16px solid #18191b;
   position: relative;
 

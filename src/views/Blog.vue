@@ -50,6 +50,7 @@ body {
 }
 
 .blogContainer {
+  user-select: none;
   width: 100vw;
   border: 16px solid #18191b;
   position: relative;

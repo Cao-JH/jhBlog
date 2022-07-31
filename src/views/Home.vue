@@ -51,6 +51,8 @@ body {
 }
 
 .home {
+  // 设置不可复制
+  user-select: none;
   width: 100vw;
   height: 100vh;
   border: 16px solid #18191b;

@@ -4,9 +4,19 @@
       <div>JH-雾海春颂</div>
     </div>
     <div class="footPic">
-      <div><img src="./assets/github-fill.png" /></div>
-      <div><img src="./assets/QQ.png" /></div>
-      <div><img src="./assets/微信.png" /></div>
+      <div>
+        <a href="https://github.com/Cao-JH"
+          ><img src="./assets/github-fill.png" alt="跳转至GitHub"
+        /></a>
+      </div>
+      <div class="code">
+        <img class="qrcode" src="./assets/qq.jpg" />
+        <img class="minicode" src="./assets/QQ.png" alt="QQ" />
+      </div>
+      <div class="code">
+        <img class="qrcode" src="./assets/wx.jpg" />
+        <img class="minicode" src="./assets/微信.png" alt="微信" />
+      </div>
     </div>
   </div>
 </template>
@@ -46,6 +56,34 @@ export default {
       img {
         width: 25px;
       }
+    }
+
+    .code {
+      position: relative;
+
+      .qrcode {
+        position: absolute;
+        // 显示在最上层
+        z-index: 99;
+        width: 5rem;
+        top: -300%;
+        right: -70%;
+        height: 5rem;
+        // 位移
+        transform: scale(0);
+        transform-origin: bottom;
+        opacity: 0;
+        border: 0.3125rem solid #18191b;
+        border-radius: 0.3rem;
+        -webkit-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+
+    .code:hover .qrcode {
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }
