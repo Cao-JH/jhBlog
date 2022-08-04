@@ -4,15 +4,15 @@
     <TopNav :activeId="2" />
     <div class="proContainer">
       <div class="project project1">
-        <p>第一个</p>
+        <p>1.开发准备中,敬请期待</p>
         <img src="../assets/asset/project1.jpg" alt="" />
       </div>
       <div class="project project2">
         <img src="../assets/asset/project2.jpg" alt="" />
-        <p>第二个</p>
+        <p>2.开发准备中,敬请期待</p>
       </div>
       <div class="project project2">
-        <p>第三个</p>
+        <p>3.开发准备中,敬请期待</p>
         <img src="../assets/asset/project3.jpg" alt="" />
       </div>
     </div>

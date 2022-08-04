@@ -3,42 +3,131 @@
     <div class="wuhai"><img src="../assets/asset/wuhai.png" /></div>
     <TopNav :activeId="3" />
     <ul class="blogContext">
-      <li class="blogs">
+      <li class="blogs" v-for="blog in currentPageData" :key="blog.id">
         <img src="@/assets/asset/横线.png" />
         <div class="blog">
-          <h3>这是第一个</h3>
+          <h3>{{ blog.title }}</h3>
           <p>
-            本站以现代、古代情诗为主，情诗网创办于2013年，以原创爱情诗歌、经典情诗、现代情诗、古代情诗、英文情诗、情诗绝句为主并收集古诗、古诗词、诗歌大全、诗词名句的文学门户。方便您下次继续阅读；可以放在浏览器的收藏夹中（快捷键Ctrl+D）;或者看到喜欢或者有趣的诗词可以通过分享按钮给你的好友分享；情诗网是目前最全情诗大全网站之一。并欢迎广大诗歌爱好者阅览投稿！喜欢本站的话请大家把本站告诉给你朋友哦！地址是
-            www.qingshiwang.com ！
+            {{ blog.context }}
           </p>
-          <router-link to="" class="linkBtn">阅读全文</router-link>
-        </div>
-      </li>
-      <li class="blogs">
-        <img src="@/assets/asset/横线.png" />
-        <div class="blog">
-          <h3>这是第二个</h3>
-          <p>
-            以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍
-          </p>
-          <router-link to="" class="linkBtn">阅读全文</router-link>
+          <router-link :to="blog.link" class="linkBtn">阅读全文</router-link>
         </div>
       </li>
     </ul>
-    <div class="pager">
-      <img src="@/assets/asset/323向左交换.png" class="prev" />
-      <div>01</div>
-      <div>02</div>
-      <div>03</div>
-      <img src="@/assets/asset/324向右交换.png" class="next" />
-    </div>
+    <Pager
+      :pageNo="pageNo"
+      :pageSize="pageSize"
+      :blogTotal="blogs.length"
+      :continues="continues"
+      @getPageNo="getPageNo"
+    />
     <Foot class="blogFoot" />
   </div>
 </template>
 
 <script>
+import Pager from "@/components/Pager";
 export default {
   name: "Project",
+  data() {
+    return {
+      // blogTotal: this.blogs.length,
+      blogs: [
+        {
+          id: 0,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 1,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 2,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 3,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 4,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 5,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 6,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+        {
+          id: 7,
+          title: "这是第二个",
+          context:
+            "以为天亮了就会迎来蓬松的朝霞,以为黄昏了就会送别疲倦的月光,以为一切都在最初的时间里走动,以为最后都会循环到最初的相逢,我走过长长的街道看过树影斑驳,我背过美丽的回忆面对车水马龙,我说过以后的岁月候着灯火阑珊,我醉过曾经的诺言等到白发苍苍",
+          link: "/",
+        },
+      ],
+      totalPage: 1, // 所有页数，默认为1
+      currentPageData: [], // 当前页显示内容
+      pageNo: 1, // 当前页数
+      pageSize: 5, // 每页显示多少条
+      continues: 3, // 中间显示数
+    };
+  },
+  mounted() {
+    this.setCurrentPageData();
+  },
+  methods: {
+    // 设置当前页的内容
+    setCurrentPageData() {
+      // 解构
+      const { pageNo, pageSize } = this;
+      // 每一页的起始数字和结束数字
+      let begin = (pageNo - 1) * pageSize;
+      let end = pageNo * pageSize;
+      console.log(begin, end);
+      // 将内容切割放入当前页
+      this.currentPageData = this.blogs.slice(begin, end);
+    },
+
+    // 获取当前第几页
+    getPageNo(pageNo) {
+      this.pageNo = pageNo;
+      this.setCurrentPageData();
+    },
+  },
+  components: {
+    Pager,
+  },
+  computed: {
+    getBlogTotal() {
+      let blogTotal = this.blogs.length;
+      return blogTotal;
+    }, // 博客数量
+  },
 };
 </script>
 
@@ -97,22 +186,6 @@ body {
           color: #e55039;
         }
       }
-    }
-  }
-  .pager {
-    width: 200px;
-    height: 20px;
-    margin: 0 0 130px 100px;
-    display: flex;
-
-    img {
-      width: 20px;
-      // float: auto;
-    }
-
-    div {
-      // flex: auto;
-      margin: 0 10px;
     }
   }
 }
