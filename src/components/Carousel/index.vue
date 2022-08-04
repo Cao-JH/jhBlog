@@ -62,15 +62,12 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .carouselPic {
-  margin-top: 40px;
-  margin-bottom: 0px;
-  width: 100px;
-  flex: 1;
+  height: 90%;
+  margin-top: 13%;
   // 图片超出部分隐藏
   overflow: hidden;
-  position: relative;
 
   .homePicContent img {
     width: 400px;
@@ -79,9 +76,9 @@ export default {
   .changePic {
     position: absolute;
     width: 100px;
-    height: 20px;
+    // height: 50px;
     bottom: 20px;
-    right: 0px;
+    right: 120px;
 
     img {
       width: 35px;

@@ -26,14 +26,7 @@ export default {
 };
 </script>
 
-<style lang="less">
-body {
-  width: 100vw;
-  height: 100vh;
-  background: #e7e7e5;
-  z-index: -1;
-}
-
+<style lang="less" scoped>
 .proContain {
   user-select: none;
   width: 100vw;

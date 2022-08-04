@@ -1,15 +1,14 @@
 <template>
   <div class="home">
-    <!-- 左侧按钮和右侧导航栏 -->
-    <div class="nav">
-      <div class="homeBtn">
-        <img src="../assets/asset/分割线条.png" />
-      </div>
-    </div>
-    <TopNav :activeId="1" />
+    <!-- 右侧导航栏 -->
+    <TopNav :activeId="1" class="top" />
 
     <!-- 整体内容 -->
     <div class="container">
+      <!-- 左侧按钮 -->
+      <div class="nav">
+        <img src="../assets/asset/分割线条.png" />
+      </div>
       <div class="homeText">
         <!-- 雾海春颂 -->
         <img src="../assets/asset/wuhai.png" />
@@ -20,10 +19,12 @@
           </p>
         </div>
       </div>
-      <!-- 轮播图 -->
-      <Carousel />
       <!-- 底部标签 -->
       <Foot class="foot" />
+    </div>
+    <!-- 轮播图 -->
+    <div class="car">
+      <Carousel />
     </div>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style>
 * {
   padding: 0;
   margin: 0;
@@ -47,70 +48,75 @@ body {
   width: 100vw;
   height: 100vh;
   background: #e7e7e5;
-  z-index: -1;
 }
 
+/* 全局滚动条事件 */
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background: #e7e7e5;
+}
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 10px;
+  background: #18191b;
+}
+</style>
+
+<style lang="less" scoped>
 .home {
   // 设置不可复制
   user-select: none;
   width: 100vw;
   height: 100vh;
   border: 16px solid #18191b;
-  position: relative;
+  display: flex;
+  justify-content: space-around;
 
-  .nav {
-    position: relative;
-
-    .homeBtn {
-      position: absolute;
-      left: 140px;
-      top: 120px;
-      width: 30px;
-    }
+  .top {
+    position: absolute;
+    right: 118px;
+    top: 64px;
   }
 
   .container {
-    margin: 0 160px;
+    flex: 0 0 35%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
+    .nav {
+      margin-top: 30px;
+      width: 30px;
+    }
+
     .homeText {
-      width: 300px;
-      flex: auto;
+      // width: 300px;
+      // flex: 0 0 400px;
       position: relative;
 
       img {
-        position: absolute;
-        top: 220px;
-        left: -48px;
-        width: 190px;
-      }
-
-      .homeTextTitle {
-        top: 280px;
-        left: -10px;
+        width: 170px;
+        margin-top: 20px;
+        margin-left: -44px;
       }
 
       .homeTextWord {
-        position: absolute;
-        width: 65%;
-        top: 420px;
+        // width: 80%;
         font-size: 12px;
         color: #52555a;
       }
     }
   }
 
-  .foot {
-    position: absolute;
-    width: 52%;
-    bottom: 0;
-    left: 0;
-
-    .footPic {
-      margin-right: 30px;
-    }
+  .car {
+    flex: 0 0 auto;
   }
 }
 </style>

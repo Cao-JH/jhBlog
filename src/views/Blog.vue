@@ -131,13 +131,7 @@ export default {
 };
 </script>
 
-<style lang="less">
-body {
-  width: 100vw;
-  background: #e7e7e5;
-  z-index: -1;
-}
-
+<style lang="less" scoped>
 .blogContainer {
   user-select: none;
   width: 100vw;
@@ -188,21 +182,5 @@ body {
       }
     }
   }
-}
-
-::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
-  height: 1px;
-}
-::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
-  border-radius: 10px;
-  background: #e7e7e5;
-}
-::-webkit-scrollbar-track {
-  /*滚动条里面轨道*/
-  border-radius: 10px;
-  background: #18191b;
 }
 </style>

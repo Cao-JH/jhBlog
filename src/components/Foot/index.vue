@@ -27,16 +27,17 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .foot {
+  border-top: 1px solid #a7abb3;
   display: flex;
-  height: 90px;
+  height: 70px;
   width: 100%;
   align-items: center;
-  border-top: 1px solid #a7abb3;
+  justify-content: space-around;
 
   .footText {
-    flex: 1;
+    flex: 0 0 30%;
     width: 100px;
     font-size: 10px;
     color: #a7abb3;
@@ -44,7 +45,7 @@ export default {
   }
 
   .footPic {
-    flex: 1;
+    flex: 0 0 40%;
     margin-right: 120px;
 
     div {

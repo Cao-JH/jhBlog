@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .homeNav {
   position: absolute;
   border-radius: 5px;

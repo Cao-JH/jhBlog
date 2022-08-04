@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .abContain {
   user-select: none;
   border: 16px solid #18191b;
